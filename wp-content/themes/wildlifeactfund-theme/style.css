@@ -4,7 +4,7 @@ Description: Modified theme for Wildlife Act Fund
 Template: layerswp
 Author: Storm Farrell
 *************/
-@import url('../layerswp/style.css');
+/*@import url('../layerswp/style.css');*/
 
 
 /******
@@ -19,3 +19,24 @@ Modified layersWP styles
 .header-site nav {
 	margin-top: 28px;
 }
+
+.cta-buttons-section .button {
+	min-width: 200px;
+	padding: 20px 70px;
+	text-align: center;
+	border-radius: 5px;
+	text-transform: uppercase;
+	background-color: transparent;
+	border: 5px solid #ed8b00;
+	color: #ed8b00;
+}
+
+.cta-buttons-section .button:hover,
+.cta-buttons-section .button:active {
+	background-color: #ed8b00;
+}
+
+.what-we-do-section img {
+	max-width: 300px;
+}
+

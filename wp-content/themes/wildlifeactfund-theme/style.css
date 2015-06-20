@@ -70,4 +70,36 @@ Modified layersWP styles
 	text-align: left;
 	font-size: 13px;
 	line-height: 1.4;
+	font-size: 12px;
+	line-height: 1.2;
+}
+
+.givengain_donations_widget {
+    padding:20px;
+}
+
+.givengain_donations_widget ul li {
+    padding-top:10px;
+    border-top: solid 1px #ccc;
+    margin-bottom:10px;
+}
+
+
+input, textarea {
+    display: block;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    transition: all 0.3s ease-out;
+}
+
+input:hover, textarea:hover {
+    border-radius: 8px
+}
+
+input:focus, textarea:hover {
+    outline: none;
+    border-radius: 8px;
+    border-color: #ccc;
 }

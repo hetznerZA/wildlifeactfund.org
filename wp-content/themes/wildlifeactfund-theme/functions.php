@@ -20,5 +20,11 @@ function javascript_includes() {
 function tooltipster_enqueue_style() {
     wp_enqueue_style( 'tooltipster', get_stylesheet_directory_uri() . '/_inc/tooltipster/tooltipster.css' ); 
 }
+/***/
+//
+// function bootstrap_enqueue_style() {
+//     wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/bootstrap-3.3.5-dist/css/bootstrap.min.css' ); 
+// }
+// add_action( 'wp_enqueue_scripts', 'bootstrap_enqueue_style' );
 add_action( 'wp_enqueue_scripts', 'tooltipster_enqueue_style' );
 /***/

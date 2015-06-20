@@ -58,3 +58,13 @@ Modified layersWP styles
 	font-size: 12px;
 	line-height: 1.2;
 }
+
+.givengain_donations_widget {
+    padding:20px;
+}
+
+.givengain_donations_widget ul li {
+    padding-top:10px;
+    border-top: solid 1px #ccc;
+    margin-bottom:10px;
+}

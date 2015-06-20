@@ -211,39 +211,6 @@ function givengain_output ( $type = 'cause', $args = '' ) {
 } // End givengain_output()
 }
 
-function givengain_donations() {
-    $cause_id = 2682;
-    $client_id = '1c9f561e5d5fcfb347c1d29430c6b1dedc61a310';
-
-    $donations = json_decode(file_get_contents("https://api.givengain.com/donation?cause_id=$cause_id&client_id=$client_id&limit=10"));
-    $markup = wp_cache_get( 'donations' );
-    if ( false === $markup ) {
-        $markup = "<ul>";
-        foreach($donations as $donation) {
-            $project = json_decode(file_get_contents("https://api.givengain.com/cause_project/$donation->cause_project_id?cause_id=$cause_id&client_id=$client_id"));
-            $activist = json_decode(file_get_contents("https://api.givengain.com/activist/$donation->donor_id?client_id=$client_id"));
-            $markup .= "<li><a href='$activist->link'>$activist->first_name $activist->last_name</a> donated $donation->currency $donation->amount to <a href='$project->link'>$project->name</a></li>";
-        }
-        $markup .= "</ul>";
-        wp_cache_set( 'donations', $markup, null, 86400 );
-    }
-    echo $markup;
-}
-add_shortcode( 'givengain_donations', 'givengain_donations' );
-
-function givengain_projects() {
-    $cause_id = 2682;
-    $client_id = '1c9f561e5d5fcfb347c1d29430c6b1dedc61a310';
-    $access_token = '9569b505eba411aaafaacf44d2248861daeb6d07';
-    $projects = json_decode(file_get_contents('https://api.givengain.com/cause_project?cause_id=2682&client_id=1c9f561e5d5fcfb347c1d29430c6b1dedc61a310'));
-    foreach($projects as $project) {
-        echo sprintf("<div class='givengain-widget' data-type='cause_project' data-id='%s' data-width='300'></div><script type='text/javascript' src='https://widget.givengain.com/gg_widget.js'></script>", $project->id);
-
-    }
-}
-
-add_shortcode( 'givengain_projects', 'givengain_projects' );
-
 if ( ! function_exists( 'givengain_shortcode' ) ) {
 /**
  * The shortcode function.

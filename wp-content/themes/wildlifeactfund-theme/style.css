@@ -132,6 +132,7 @@ input:focus, textarea:hover {
 .swiper-slide {
 	-webkit-background-size: cover;
 	background-size: cover;
+	background-position: right center !important;
 }
 
 .swiper-slide .btn-large span {

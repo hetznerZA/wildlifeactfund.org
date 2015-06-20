@@ -79,3 +79,23 @@ Modified layersWP styles
     border-top: solid 1px #ccc;
     margin-bottom:10px;
 }
+
+
+input, textarea {
+    display: block;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    transition: all 0.3s ease-out;
+}
+
+input:hover, textarea:hover {
+    border-radius: 8px
+}
+
+input:focus, textarea:hover {
+    outline: none;
+    border-radius: 8px;
+    border-color: #ccc;
+}

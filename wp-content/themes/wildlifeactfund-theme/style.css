@@ -129,6 +129,10 @@ input:focus, textarea:hover {
 	font-size: 25px;
 }
 
+.swiper-slide {
+	-webkit-background-size: cover;
+	background-size: cover;
+}
 
 .swiper-slide .btn-large span {
 	color: #ed8b00;

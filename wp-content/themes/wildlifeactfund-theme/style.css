@@ -5,3 +5,17 @@ Template: layerswp
 Author: Storm Farrell
 *************/
 @import url('../layerswp/style.css');
+
+
+/******
+Modified layersWP styles
+******/
+
+.site-logo-link img, 
+.mark img {
+	max-height: 80px;
+}
+
+.header-site nav {
+	margin-top: 28px;
+}

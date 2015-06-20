@@ -211,6 +211,10 @@ function givengain_output ( $type = 'cause', $args = '' ) {
 } // End givengain_output()
 }
 
+function my_shortcode() {
+
+}
+
 if ( ! function_exists( 'givengain_shortcode' ) ) {
 /**
  * The shortcode function.
@@ -220,6 +224,7 @@ if ( ! function_exists( 'givengain_shortcode' ) ) {
  * @return string          Output using the template tag.
  */
 function givengain_shortcode ( $atts, $content = null ) {
+    echo 'hallo';
 	$args = (array)$atts;
 
 	$defaults = array(

@@ -211,6 +211,23 @@ function givengain_output ( $type = 'cause', $args = '' ) {
 } // End givengain_output()
 }
 
+function givengain_projects() {
+    $cause_id = 2682;
+    $client_id = '1c9f561e5d5fcfb347c1d29430c6b1dedc61a310';
+    $access_token = '9569b505eba411aaafaacf44d2248861daeb6d07';
+    $projects = json_encode(file_get_contents('https://api.givengain.com/cause_project?cause_id=2682&client_id=1c9f561e5d5fcfb347c1d29430c6b1dedc61a310'));
+    foreach($projects as $project) {
+        echo $project['id'];
+        echo sprintf("<div class='givengain-widget' data-type='cause_project' data-id='%s' data-width='300'></div><script type='text/javascript' src='https://widget.givengain.com/gg_widget.js'></script>", $project['id']);
+
+    }
+    echo '<pre>';
+    print_r($response);
+    echo '</pre>';
+}
+
+add_shortcode( 'givengain_projects', 'givengain_projects' );
+
 if ( ! function_exists( 'givengain_shortcode' ) ) {
 /**
  * The shortcode function.
@@ -220,6 +237,7 @@ if ( ! function_exists( 'givengain_shortcode' ) ) {
  * @return string          Output using the template tag.
  */
 function givengain_shortcode ( $atts, $content = null ) {
+    echo 'hallo';
 	$args = (array)$atts;
 
 	$defaults = array(

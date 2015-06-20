@@ -36,7 +36,15 @@ Modified layersWP styles
 	background-color: #ed8b00;
 }
 
+.what-we-do-section {
+	padding-top: 30px;
+}
+
 .what-we-do-section img {
 	max-width: 300px;
+}
+
+.footer-site .row {
+	padding: 0;
 }
 

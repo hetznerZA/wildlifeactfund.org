@@ -5,11 +5,16 @@ Template: layerswp
 Author: Storm Farrell
 *************/
 /*@import url('../layerswp/style.css');*/
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700);
 
 
 /******
 Modified layersWP styles
 ******/
+
+body,p, h1, h2, h3, h4, h5, h3.heading {
+    font-family: "Roboto Condensed"
+}
 
 .site-logo-link img, 
 .mark img {
@@ -80,14 +85,27 @@ Modified layersWP styles
     margin-bottom:10px;
 }
 
+input {
+    height:35px;
+    max-width:500px;
+}
 
 input, textarea {
+    
     display: block;
-    padding: 0 8px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     color: #333;
     transition: all 0.3s ease-out;
+}
+
+input[type="tel"] {
+    height:35px;
+}
+
+form p {
+    font-size:13px;
 }
 
 input:hover, textarea:hover {

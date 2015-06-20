@@ -49,6 +49,10 @@ Modified layersWP styles
 	max-width: 300px;
 }
 
+.what-we-do-section.what-we-do-content img {
+	max-width: 250px;
+}
+
 .footer-site .row {
 	padding: 0;
 }

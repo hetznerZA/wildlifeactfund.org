@@ -69,7 +69,7 @@ return array(
 		1 => 'counts',
 		2 => 'plugins',
 	),
-	'objectcache.lifetime' => 180,
+	'objectcache.lifetime' => 86400,
 	'objectcache.purge.all' => false,
 	'fragmentcache.enabled' => false,
 	'fragmentcache.debug' => false,

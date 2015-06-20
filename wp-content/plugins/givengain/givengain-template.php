@@ -211,6 +211,16 @@ function givengain_output ( $type = 'cause', $args = '' ) {
 } // End givengain_output()
 }
 
+function givengain_donations() {
+    $cause_id = 2682;
+    $client_id = '1c9f561e5d5fcfb347c1d29430c6b1dedc61a310';
+    $donations = json_decode(file_get_contents("https://api.givengain.com/donation?cause_id=$cause_id&client_id=$client_id"));
+    echo '<pre>';
+    print_r($donations);
+    echo '</pre>';
+}
+add_shortcode( 'givengain_donations', 'givengain_projects' );
+
 function givengain_projects() {
     $cause_id = 2682;
     $client_id = '1c9f561e5d5fcfb347c1d29430c6b1dedc61a310';

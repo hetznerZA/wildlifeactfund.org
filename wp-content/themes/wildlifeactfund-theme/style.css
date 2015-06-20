@@ -40,6 +40,11 @@ Modified layersWP styles
 	padding-top: 30px;
 }
 
+.what-we-do-section .media,
+.what-we-do-section .excerpt {
+	overflow: visible;
+}
+
 .what-we-do-section img {
 	max-width: 300px;
 }
@@ -52,9 +57,15 @@ Modified layersWP styles
 	display: inline-block;
 }
 
+.tooltip:hover {
+	cursor: pointer;
+}
+
 .tooltip:after {
 	color: white;
 	text-align: left;
+	font-size: 13px;
+	line-height: 1.4;
 	font-size: 12px;
 	line-height: 1.2;
 }

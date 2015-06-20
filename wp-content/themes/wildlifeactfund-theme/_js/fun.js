@@ -3,8 +3,8 @@
 	$(function() {
 		
 		// Enqueue Tooltipster
-		$('.toolip').tooltipster({
-			// position: 'right',
+		$('.tooltip').tooltipster({
+			position: 'right',
 			maxWidth: 200
 		});
 	});

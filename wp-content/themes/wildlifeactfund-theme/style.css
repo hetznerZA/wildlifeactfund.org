@@ -121,3 +121,15 @@ input:focus, textarea:hover {
     border-radius: 8px;
     border-color: #ccc;
 }
+
+.swiper-slide .btn-large {
+	background-color: black !important;
+	border: 2px solid white;
+	padding: 20px 50px;
+	font-size: 25px;
+}
+
+
+.swiper-slide .btn-large span {
+	color: #ed8b00;
+}

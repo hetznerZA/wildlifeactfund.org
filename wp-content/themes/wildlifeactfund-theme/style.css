@@ -54,6 +54,10 @@ body,p, h1, h2, h3, h4, h5, h3.heading {
 	max-width: 300px;
 }
 
+.what-we-do-section.what-we-do-content img {
+	max-width: 250px;
+}
+
 .footer-site .row {
 	padding: 0;
 }
@@ -118,3 +122,14 @@ input:focus, textarea:hover {
     border-color: #ccc;
 }
 
+.swiper-slide .btn-large {
+	background-color: black !important;
+	border: 2px solid white;
+	padding: 20px 50px;
+	font-size: 25px;
+}
+
+
+.swiper-slide .btn-large span {
+	color: #ed8b00;
+}

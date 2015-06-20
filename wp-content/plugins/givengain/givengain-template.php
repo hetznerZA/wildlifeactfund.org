@@ -212,23 +212,22 @@ function givengain_output ( $type = 'cause', $args = '' ) {
 }
 
 function givengain_donations() {
-    // $cause_id = 2682;
-    // $client_id = '1c9f561e5d5fcfb347c1d29430c6b1dedc61a310';
-    // $donations = json_decode(file_get_contents("https://api.givengain.com/donation?cause_id=$cause_id&client_id=$client_id&limit=10"));
-    // echo "<ul>";
-    // foreach($donations as $donation) {
-    //     
-    //     $project = json_decode(file_get_contents("https://api.givengain.com/cause_project/$donation->cause_project_id?cause_id=$cause_id&client_id=$client_id"));
-    //     echo '<pre>';
-    //     print_r($project);
-    //     echo '</pre>';
-    //     $activist = json_decode(file_get_contents("https://api.givengain.com/activist/$donation->donor_id?client_id=$client_id"));
-    //     echo '<pre>';
-    //     print_r($activist);
-    //     echo '</pre>';
-    //     echo "<li><a href='$activist->link'>$activist->first_name $activist->last_name</a> donated $donation->currency $donation->amount to <a href='$project->link'>$project->name</a></li>";
-    // }
-    // echo "</ul>";
+    $cause_id = 2682;
+    $client_id = '1c9f561e5d5fcfb347c1d29430c6b1dedc61a310';
+
+    $donations = json_decode(file_get_contents("https://api.givengain.com/donation?cause_id=$cause_id&client_id=$client_id&limit=10"));
+    $markup = wp_cache_get( 'donations' );
+    if ( false === $markup ) {
+        $markup = "<ul>";
+        foreach($donations as $donation) {
+            $project = json_decode(file_get_contents("https://api.givengain.com/cause_project/$donation->cause_project_id?cause_id=$cause_id&client_id=$client_id"));
+            $activist = json_decode(file_get_contents("https://api.givengain.com/activist/$donation->donor_id?client_id=$client_id"));
+            $markup .= "<li><a href='$activist->link'>$activist->first_name $activist->last_name</a> donated $donation->currency $donation->amount to <a href='$project->link'>$project->name</a></li>";
+        }
+        $markup .= "</ul>";
+        wp_cache_set( 'donations', $markup, null, 86400 );
+    }
+    echo $markup;
 }
 add_shortcode( 'givengain_donations', 'givengain_donations' );
 

@@ -38,7 +38,7 @@ class Givengain_Widget_Donations extends WP_Widget
                 $markup .= "<li><a href='$activist->link'>$activist->first_name $activist->last_name</a> donated <strong>$donation->currency $donation->amount</strong> to <a href='$project->link'>$project->name</a></li>";
             }
             $markup .= "</ul>";
-            wp_cache_set( 'donations', $markup, null, 0 );
+            wp_cache_set( 'donations', $markup, null, 86400);
         } else {
             // echo 'from cache';
         }

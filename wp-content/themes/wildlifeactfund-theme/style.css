@@ -48,3 +48,13 @@ Modified layersWP styles
 	padding: 0;
 }
 
+.tooltip {
+	display: inline-block;
+}
+
+.tooltip:after {
+	color: white;
+	text-align: left;
+	font-size: 12px;
+	line-height: 1.2;
+}

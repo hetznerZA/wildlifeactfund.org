@@ -3,8 +3,8 @@
 	$(function() {
 		
 		// Enqueue Tooltipster
-		$('.what-we-do-section img').tooltipster({
-			position: 'right',
+		$('.toolip').tooltipster({
+			// position: 'right',
 			maxWidth: 200
 		});
 	});

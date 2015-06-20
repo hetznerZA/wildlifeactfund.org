@@ -94,7 +94,7 @@ input {
     max-width:500px;
 }
 
-input, textarea {
+#mc4wp-form-1 input, input, textarea {
     
     display: block;
     padding: 5px;

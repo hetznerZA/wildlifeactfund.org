@@ -27,18 +27,19 @@ class Givengain_Widget_Donations extends WP_Widget
         $cause_id = 2682;
         $client_id = '1c9f561e5d5fcfb347c1d29430c6b1dedc61a310';
 
-        $donations = json_decode(file_get_contents("https://api.givengain.com/donation?cause_id=$cause_id&client_id=$client_id&limit=10"));
         $markup = wp_cache_get( 'donations' );
+        echo '</pre>';
         if ( false === $markup ) {
             echo 'fetching live data...';
             $markup = "<ul>";
+            $donations = json_decode(file_get_contents("https://api.givengain.com/donation?cause_id=$cause_id&client_id=$client_id&limit=10"));
             foreach($donations as $donation) {
                 $project = json_decode(file_get_contents("https://api.givengain.com/cause_project/$donation->cause_project_id?cause_id=$cause_id&client_id=$client_id"));
                 $activist = json_decode(file_get_contents("https://api.givengain.com/activist/$donation->donor_id?client_id=$client_id"));
                 $markup .= "<li><a href='$activist->link'>$activist->first_name $activist->last_name</a> donated <strong>$donation->currency $donation->amount</strong> to <a href='$project->link'>$project->name</a></li>";
             }
             $markup .= "</ul>";
-            wp_cache_set( 'donations', $markup, 86400, 86400);
+            wp_cache_set( 'donations', $markup);
         } else {
             echo 'retrieved from cache';
         }

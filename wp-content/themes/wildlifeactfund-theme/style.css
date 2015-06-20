@@ -138,3 +138,16 @@ input:focus, textarea:hover {
 .swiper-slide .btn-large span {
 	color: #ed8b00;
 }
+
+#layers-widget-column-32 {
+	padding-top: 0;
+}
+
+#layers-widget-column-32 .list-grid {
+	text-align: center !important;
+}
+
+#layers-widget-column-32 .list-grid .column {
+	display: inline-block !important;
+	float: none !important;
+}

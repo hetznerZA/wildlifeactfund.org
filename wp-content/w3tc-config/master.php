@@ -45,7 +45,7 @@ return array(
 	'objectcache.enabled' => true,
 	'objectcache.debug' => false,
 	'objectcache.engine' => 'file',
-	'objectcache.file.gc' => 3600,
+	'objectcache.file.gc' => 86400,
 	'objectcache.file.locking' => false,
 	'objectcache.memcached.servers' => array(
 		0 => '127.0.0.1:11211',

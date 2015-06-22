@@ -10,7 +10,7 @@ class Givengain_Widget_Donations extends WP_Widget
         // widget actual processes
         parent::__construct(
             'foo_widget', // Base ID
-            __( 'Widget Title', 'text_domain' ), // Name
+            __( 'GivenGain Donations', 'text_domain' ), // Name
             array( 'description' => __( 'A Foo Widget', 'text_domain' ), ) // Args
         );
     }
@@ -30,7 +30,7 @@ class Givengain_Widget_Donations extends WP_Widget
         $markup = wp_cache_get( 'donations' );
         echo '</pre>';
         if ( false === $markup ) {
-            echo 'fetching live data...';
+            // echo 'fetching live data...';
             $markup = "<ul>";
             $donations = json_decode(file_get_contents("https://api.givengain.com/donation?cause_id=$cause_id&client_id=$client_id&limit=10"));
             foreach($donations as $donation) {
@@ -41,7 +41,7 @@ class Givengain_Widget_Donations extends WP_Widget
             $markup .= "</ul>";
             wp_cache_set( 'donations', $markup);
         } else {
-            echo 'retrieved from cache';
+            // echo 'retrieved from cache';
         }
         echo "<div class='givengain_donations_widget well'>";
         echo "<h5 class='section-nav-title'>Donations received</h5>";
